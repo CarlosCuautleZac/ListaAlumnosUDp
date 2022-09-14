@@ -1,0 +1,39 @@
+﻿<Window x:Class="ListaAlumnosUdp.Views.ClienteView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ListaAlumnosUdp.ViewModels"
+        xmlns:local="clr-namespace:ListaAlumnosUdp.Views"
+        mc:Ignorable="d"
+        Height="300" Width="400" Title="Ejercicio 2">
+
+    <Window.DataContext>
+        <vm:PersonaViewModel></vm:PersonaViewModel>
+    </Window.DataContext>
+    
+    <StackPanel Margin="10">
+
+        <DockPanel Margin="0,0,0,10">
+            <TextBlock FontSize="17" Margin="0,0,10,0">Servidor</TextBlock>
+            <TextBox Text="{Binding IP}" FontSize="17"></TextBox>
+        </DockPanel>
+
+        <DockPanel  Margin="0,0,0,10">
+            <TextBlock FontSize="17" Margin="0,0,10,0">Nombre</TextBlock>
+            <TextBox Text="{Binding Persona.Nombre}" FontSize="17"></TextBox>
+        </DockPanel>
+
+        <DockPanel  Margin="0,0,0,10">
+            <TextBlock FontSize="17" Margin="0,0,30,0">Lista</TextBlock>
+            <ComboBox FontSize="17" SelectedItem="{Binding Persona.Lista}">
+                <ComboBoxItem>Lista 1</ComboBoxItem>
+                <ComboBoxItem>Lista 2</ComboBoxItem>
+            </ComboBox>
+        </DockPanel>
+
+        <TextBlock Text="{Binding Error}" FontSize="17" Height="30"  Foreground="Red" HorizontalAlignment="Center"></TextBlock>
+
+        <Button Command="{Binding EnviarCommand}" FontSize="17">Enviar</Button>
+    </StackPanel>
+</Window>
