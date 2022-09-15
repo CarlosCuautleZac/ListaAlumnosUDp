@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListaAlumnosUdp.Models
+namespace ListaAlumnosUdpServidor.Models
 {
-    internal class Persona
+    public class Persona
     {
         public string Nombre { get; set; } = "";
         public string Lista { get; set; } = "";
