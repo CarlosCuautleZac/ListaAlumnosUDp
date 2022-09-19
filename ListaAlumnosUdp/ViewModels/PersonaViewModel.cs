@@ -57,7 +57,7 @@ namespace ListaAlumnosUdp.ViewModels
         {
             Persona = new Persona();
             EnviarCommand = new RelayCommand(Eviar);
-            client = new(10001);//Bind - Separar un puerto
+            client = new(10002);//Bind - Separar un puerto
         }
 
         //Metodos

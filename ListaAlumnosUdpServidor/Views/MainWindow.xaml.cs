@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ListaAlumnosUdpServidor.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,16 @@ namespace ListaAlumnosUdpServidor.Views
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((PersonasViewModel)this.DataContext).IniciarCommand.Execute(null);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ((PersonasViewModel)this.DataContext).DetenerCommand.Execute(null);
         }
     }
 }
