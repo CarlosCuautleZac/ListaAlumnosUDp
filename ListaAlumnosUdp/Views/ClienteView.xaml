@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ListaAlumnosUdp.ViewModels"
-        xmlns:local="clr-namespace:ListaAlumnosUdp.Views"
+        xmlns:local="clr-namespace:ListaAlumnosUdp.Views" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Height="300" Width="400" Title="Ejercicio 2">
 
@@ -27,8 +27,8 @@
         <DockPanel  Margin="0,0,0,10">
             <TextBlock FontSize="17" Margin="0,0,30,0">Lista</TextBlock>
             <ComboBox FontSize="17" SelectedItem="{Binding Persona.Lista}">
-                <ComboBoxItem>Lista 1</ComboBoxItem>
-                <ComboBoxItem>Lista 2</ComboBoxItem>
+                <sys:String>Lista 1</sys:String>
+                <sys:String>Lista 2</sys:String>
             </ComboBox>
         </DockPanel>
 

@@ -97,8 +97,10 @@ namespace ListaAlumnosUdp.ViewModels
                 
                 client.Send(buffer,buffer.Length,ip);
 
-                Persona.Nombre = "";
-                persona.Lista = "";
+                //Persona.Nombre = "";
+                //persona.Lista = "";
+
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
 
             }
 

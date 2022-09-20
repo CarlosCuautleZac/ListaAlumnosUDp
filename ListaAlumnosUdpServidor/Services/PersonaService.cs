@@ -36,14 +36,21 @@ namespace ListaAlumnosUdpServidor.Services
             IPEndPoint ipe = new IPEndPoint(IPAddress.Any, 10001);
 
             while (true)
-            {         
-                byte[] buffer = client.Receive(ref ipe);
-                string json = Encoding.UTF8.GetString(buffer);
-                Persona? persona = JsonConvert.DeserializeObject<Persona>(json);
+            {
+                try
+                {
+                    byte[] buffer = client.Receive(ref ipe);
+                    string json = Encoding.UTF8.GetString(buffer);
+                    Persona? persona = JsonConvert.DeserializeObject<Persona>(json);
 
-                if (persona != null)
-                    PersonaRecibida?.Invoke(persona);
+                    if (persona != null)
+                        PersonaRecibida?.Invoke(persona);
             }
+                catch (Exception)
+            {
+                break;
+            }
+        }
 
         }
 
